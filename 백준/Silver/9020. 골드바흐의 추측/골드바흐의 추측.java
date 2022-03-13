@@ -4,20 +4,22 @@ import java.io.InputStreamReader;
 
 public class Main {
     static boolean[] prime;
+    static int N = 10000;
 
     public static void main(String[] args) throws NumberFormatException, IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         int T = Integer.parseInt(br.readLine());
-
+        make_prime();
+        
         while (T != 0) {
             int n = Integer.parseInt(br.readLine());
 
             int p1 = n / 2;
             int p2 = n / 2;
 
-            make_prime(n);
+            
 
             while (true) {
                 if (prime[p1] == false && prime[p2] == false) {
@@ -37,7 +39,7 @@ public class Main {
     }
 
     // N이하의 소수 구하기
-    public static void make_prime(int N) {
+    public static void make_prime() {
         prime = new boolean[N + 1];
 
         prime[0] = prime[1] = true;
