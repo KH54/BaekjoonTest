@@ -22,12 +22,8 @@ public class Main {
         list = list.stream().distinct().sorted().sorted((o1, o2) -> o1.length() - o2.length()).collect(Collectors.toList());
 
         for (String i : list) {
-            if (!i.isBlank()) {
-                sb.append(i).append("\n");
-            }
+            sb.append(i).append("\n");
         }
         System.out.println(sb);
-
     }
-
 }
