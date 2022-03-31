@@ -15,16 +15,12 @@ public class Main {
 
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
+
         for (int i = 0; i < N; i++) {
             int temp = Integer.parseInt(st.nextToken());
 
-            if (temp > max) {
-                max = temp;
-            }
-
-            if (temp < min) {
-                min = temp;
-            }
+            max = temp > max ? temp : max;
+            min = temp < min ? temp : min;
         }
 
         System.out.println(max * min);
